@@ -94,7 +94,7 @@ L_Heathin_Ring_Wait:
 
 L_Heathin_Ring_Thanks:
     mes "[Heathin]";
-    mes "\"Thank you again for helping me fulfil my commission.  It has made a signficant dint in what the Council requires of me.  Perhaps I may be of service to you again one day!\"";
+    mes "\"Thank you again for helping me fulfill my commission.  It has made a significant dent in what the Council requires of me.  Perhaps I may be of service to you again one day!\"";
     close;
 
 L_Heathin_Terranite_Hood:
