@@ -6,6 +6,7 @@
 042-1,95,127,55,11|monster|BlackScorpion|1009,25,100000ms,30000ms,Mob042-1::On1009
 042-1,95,128,53,8|monster|Scorpion|1003,10,100000ms,30000ms,Mob042-1::On1003
 042-1,62,81,42,50|monster|FireGoblin|1011,2,100000ms,30000ms,Mob042-1::On1011
+042-1,102,124,14,9|monster|FafiDragon|1120,1,100000ms,30000ms,Mob042-1::On1120
 
 
 042-1,0,0,0|script|Mob042-1|32767
@@ -29,6 +30,11 @@ On1009:
 
 On1011:
     set @mobID, 1011;
+    callfunc "MobPoints";
+    end;
+
+On1120:
+    set @mobID, 1120;
     callfunc "MobPoints";
     end;
 }
