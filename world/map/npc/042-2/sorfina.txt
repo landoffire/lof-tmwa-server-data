@@ -4,13 +4,13 @@
 042-2,28,26,0|script|Sorfina|154,4,4
 {
     callfunc "ClearVariables";
-    
+
     if (FLAGS & FLAG_TUTORIAL_DONE) goto L_HatCheck;
     if (QL_SORFINA == 4) goto L_Heal;
     if (QL_SORFINA == 3) goto L_Clothes;
     if (QL_SORFINA == 2) goto L_Chest;
     if (QL_SORFINA == 1) goto L_Carpet;
-    
+
     callfunc "GameRules";
     goto L_Start;
 
@@ -111,7 +111,7 @@ L_Heal:
 
 L_HatCheck:
     set @hat$, "";
-    
+
     if (Sorfina_Caps == 9 && BaseLevel >= 99) set @hat$, "Level99Cap";
     if (Sorfina_Caps == 8 && BaseLevel >= 90) set @hat$, "Level90Cap";
     if (Sorfina_Caps == 7 && BaseLevel >= 80) set @hat$, "Level80Cap";
@@ -122,30 +122,30 @@ L_HatCheck:
     if (Sorfina_Caps == 2 && BaseLevel >= 30) set @hat$, "Level30Cap";
     if (Sorfina_Caps == 1 && BaseLevel >= 20) set @hat$, "Level20Cap";
     if (Sorfina_Caps == 0 && BaseLevel >= 10) set @hat$, "Level10Cap";
-    
+
     if (@hat$ == "") goto L_Again;
-    
+
     getinventorylist;
     if (@inventorylist_count == 100)
         goto L_NoRoom;
-    
-    setarray @message_list$, 
-        "I've been keeping it a secret, but I've finally finished a present for you: an emblazoned cap. It's a celebration of what you've achieved so far. Come back later and I'll have another cap for you.", 
-        "Ah, here's the next cap. Keep up the good work!", 
-        "You are doing well! Take this cap and I'll see you soon!", 
-        "I've finished you another cap, and I'm proud of your progress. Never stop improving!", 
-        "Your endurance is impressive. Here's your cap; I'll be waiting here when you earn the next.", 
-        "You aren't a household name yet, but soon all Tulimshar will acknowledge your prowess. Take this cap and carry on!", 
-        "Tanisha tells me that several of her friends hope to be adventurers some day, 'just like " + strcharinfo(0) + ".' Take your cap, and prove their adoration well-placed.", 
-        "Most adventurers would have settled down by now into the faint twilight of their fame, but you've kept going. I'm proud of you, although I fear it may be some time before the next cap is finished.", 
-        "Your cap is finished at last, and you have earned it. The world rings with your prowess, but there are yet heights you have not yet achieved...", 
+
+    setarray @message_list$,
+        "I've been keeping it a secret, but I've finally finished a present for you: an emblazoned cap. It's a celebration of what you've achieved so far. Come back later and I'll have another cap for you.",
+        "Ah, here's the next cap. Keep up the good work!",
+        "You are doing well! Take this cap and I'll see you soon!",
+        "I've finished you another cap, and I'm proud of your progress. Never stop improving!",
+        "Your endurance is impressive. Here's your cap; I'll be waiting here when you earn the next.",
+        "You aren't a household name yet, but soon all Tulimshar will acknowledge your prowess. Take this cap and carry on!",
+        "Tanisha tells me that several of her friends hope to be adventurers some day, 'just like " + strcharinfo(0) + ".' Take your cap, and prove their adoration well-placed.",
+        "Most adventurers would have settled down by now into the faint twilight of their fame, but you've kept going. I'm proud of you, although I fear it may be some time before the next cap is finished.",
+        "Your cap is finished at last, and you have earned it. The world rings with your prowess, but there are yet heights you have not yet achieved...",
         "I would never have thought when you were brought to my house for the first time, weak and ragged, that you would become one of the most powerful adventurers ever to grace the streets of Tulimshar. This is my last cap for you, now go and use your power wisely!";
-    
+
     mes "[Sorfina]";
     mes "\"" + @message_list$[Sorfina_Caps] + "\"";
-    
+
     cleararray @message_list$, 10, "";
-    
+
     getitem @hat$, 1;
     set @hat$, "";
     set Sorfina_Caps, Sorfina_Caps + 1;
