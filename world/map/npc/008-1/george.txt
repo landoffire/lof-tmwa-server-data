@@ -8,13 +8,13 @@
 
     mes "[George the Pirate]";
     mes "\"Yar! Do you need something, matey?\"";
+    goto L_Main;
+
+L_Main:
     if (GEORGE_Quest == 1) goto L_Main2;
     if (GEORGE_Quest == 2) goto L_Main3;
     if (GEORGE_Quest == 3) goto L_Main5;
     if (GEORGE_Quest == 4) goto L_Main4;
-    goto L_Main;
-
-L_Main:
     menu
         "Can you explain the Ferry?", L_Explain,
         "Nothing I guess", L_Close;
