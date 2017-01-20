@@ -1,0 +1,92 @@
+// Silvia was originally just a conversational NPC.
+// The quest portion of this script is largely drawn from TMW's Morgan by Wushin.
+// Modification and cleanup for LoF by Pyndragon.
+
+021-1,76,67,0|script|Silvia|207
+{
+    if (QUEST_Silvia > 0 && QUEST_Silvia < 4)
+        goto L_Learn;
+
+    mes "[Silvia]";
+    mes "\"If you follow the road west, then south, you will arrive at the Bazaar in Southern Tulimshar.\"";
+    next;
+    mes "\"If you go west, then north, you'll see the Wizard Academy my parents just sent me to.\"";
+    next;
+    mes "\"The Academy is good, but I wish I had more free time.  It takes a lot of intelligence to get what the teachers are talking about.\"";
+
+    if (QUEST_Silvia > 3)
+        goto L_Close;
+
+    mes "Silvia looks at you appraisingly.";
+    next;
+
+    if (Int >= 5)
+        goto L_Learn;
+
+    mes "\"I doubt you are ready for such studies.\"";
+
+    goto L_Close;
+
+L_Learn:
+    if (QUEST_Silvia == 0)
+        goto L_NotSeen;
+    if (QUEST_Silvia == 1)
+        goto L_Seen;
+    if (QUEST_Silvia == 2)
+        goto L_Started;
+    if (QUEST_Silvia == 3)
+        goto L_CastOnce;
+    goto L_Close;
+
+L_NotSeen:
+    set QUEST_Silvia, 1;
+    mes "\"Actually, it looks like you could probably learn the basics I've been taught! It'd be a great chance for me to practice my own skills.\"";
+    mes "\"Would you like to learn some simple magic?\"";
+    menu
+        "Yes.", L_Start,
+        "Maybe later.", L_Close;
+
+L_Seen:
+    mes "[Silvia]";
+    mes "\"So, are you ready to learn some magic now?\"";
+    menu
+        "Yes.", L_Start,
+        "Maybe later.", L_Close;
+
+L_Start:
+    set QUEST_Silvia, 2;
+    mes "\"Great, let's begin your first lesson.\"";
+    getitem "Wand", 1;
+    mes "\"This is a pretty simple wand. My teacher actually gave some to give out to promising students like you, so you can keep it.\"";
+    mes "\"Various wands and staffs are found throughout the land with many different strengths and weaknesses, but they are often hard to come by.\"";
+    mes "\"To use the wand you need to have it equipped and speak the incantation to let it tap into your mana.\"";
+    mes "\"As the power of your magic grows so will the spells you can cast.\"";
+    mes "\"The only spell I know how to teach is " + getspellinvocation("wand") + ".\"";
+    mes "\"Equip the wand, and you'll be able try out that spell.\"";
+    mes "\"To cast a spell open the chat window, type the invocation and press enter.\"";
+    mes "\"Speak to me again once you've cast the spell.\"";
+    goto L_Close;
+
+L_Started:
+    mes "[Silvia]";
+    mes "\"Lets start with a basic wand attack, " + getspellinvocation("wand") + ".\"";
+    mes "\"Equip the wand and try out that spell.\"";
+    mes "\"To cast a spell open the chat window, type the invocation and press enter.\"";
+    mes "\"Speak to me again once you've cast the spell.\"";
+    goto L_Close;
+
+L_CastOnce:
+    mes "[Silvia]";
+    mes "\"Ok, good job! Looks like you have good mana flow.\"";
+    mes "\"On to the next lesson. Now that you have " + getspellinvocation("wand") + " cast,\"";
+    mes "\"Each time you attack the wand will convert a bit of your mana into a magic bolt.\"";
+    mes "\"After so many attacks, you will need to recast the invocation to stay attuned to the wand.\"";
+    mes "\"(Logging out will also cancel any spell effects currently active in-game.).\"";
+    next;
+    mes "\"Well, I've taught you everything I've learned well enough to pass on. You should seek out true teachers, and perhaps the elusive Mana Seed, if you wish to progress further.\"";
+    set QUEST_Silvia, 4;
+    goto L_Close;
+
+L_Close:
+    close;
+}

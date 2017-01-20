@@ -33,8 +33,8 @@ L_Return:
 }
 function|script|CheckWand
 {
-    setarray $@Wands, 758, 1171;
-    setarray $@WandsPwr, 2, 1;
+    setarray $@Wands, 758, 905;
+    setarray $@WandsPwr, 3, 1;
     setarray $@WandsAnim, 35, 33;
     set @Wand, 0;
     set @wand_loop, 0;
@@ -48,7 +48,7 @@ L_Loop:
 L_SetWand:
     set @Wand, $@WandsPwr[@wand_loop];
     set @WandID, $@WandsAnim[@wand_loop];
-    if (QL_MORGAN == 2)
+    if (QUEST_Silvia == 2)
         goto L_SetCastOnce;
     goto L_Return;
 
@@ -59,7 +59,7 @@ L_LoopAgain:
     goto L_Loop;
 
 L_SetCastOnce:
-    set QL_MORGAN, 3;
+    set QUEST_Silvia, 3;
     goto L_Return;
 
 L_Return:

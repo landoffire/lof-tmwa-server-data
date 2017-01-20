@@ -18,5 +18,6 @@ npc: npc/021-1/pauline.txt
 npc: npc/021-1/sewer_east.txt
 npc: npc/021-1/sewer_north.txt
 npc: npc/021-1/sewer_west.txt
+npc: npc/021-1/silvia.txt
 npc: npc/021-1/weellos.txt
 npc: npc/021-1/workers.txt
