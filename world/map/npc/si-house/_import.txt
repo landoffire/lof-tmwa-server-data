@@ -1,0 +1,5 @@
+// Map si-house: Secret_Island_Indoor
+// This file is generated automatically. All manually added changes will be removed when running the Converter.
+map: si-house
+npc: npc/si-house/_mobs.txt
+npc: npc/si-house/_warps.txt

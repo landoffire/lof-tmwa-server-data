@@ -1,0 +1,7 @@
+// This file is generated automatically. All manually added changes will be removed when running the Converter.
+// Secret Island House warps
+
+// This file is generated automatically. All manually added changes will be removed when running the Converter.
+// Secret_Island_Indoor warps
+
+si-house,33,36|warp|-1,-1,si-outside,73,26

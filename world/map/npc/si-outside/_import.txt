@@ -1,4 +1,5 @@
+// Map si-outside: Secret Island
 // This file is generated automatically. All manually added changes will be removed when running the Converter.
-// Secret Island warps
-
-secret-island,164,105|warp|-1,-1,018-1,166,49
+map: si-outside
+npc: npc/si-outside/_mobs.txt
+npc: npc/si-outside/_warps.txt

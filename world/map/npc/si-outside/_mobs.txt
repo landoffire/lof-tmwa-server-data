@@ -1,0 +1,33 @@
+// This file is generated automatically. All manually added changes will be removed when running the Converter.
+// Secret Island mobs
+
+si-outside,91,56,153,86|monster|CloverPatch|1037,2,25000ms,15000ms,Mobsi-outside::On1037
+si-outside,126,58,37,43|monster|SmokeDragon|1123,2,100000ms,50000ms,Mobsi-outside::On1123
+si-outside,98,47,93,65|monster|BlackSlime|1119,10,15000ms,10000ms,Mobsi-outside::On1119
+si-outside,91,60,153,95|monster|RedSlime|1008,4,120000ms,30000ms,Mobsi-outside::On1008
+
+
+si-outside,0,0,0|script|Mobsi-outside|32767
+{
+    end;
+
+On1008:
+    set @mobID, 1008;
+    callfunc "MobPoints";
+    end;
+
+On1037:
+    set @mobID, 1037;
+    callfunc "MobPoints";
+    end;
+
+On1119:
+    set @mobID, 1119;
+    callfunc "MobPoints";
+    end;
+
+On1123:
+    set @mobID, 1123;
+    callfunc "MobPoints";
+    end;
+}

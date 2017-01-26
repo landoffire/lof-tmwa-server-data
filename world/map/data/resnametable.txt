@@ -122,6 +122,7 @@ hh-maincave#hh-maincave.wlk#
 hh-outside#hh-outside.wlk#
 jacks-basement#jacks-basement.wlk#
 jacks-indoor#jacks-indoor.wlk#
-secret-island#secret-island.wlk#
+si-house#si-house.wlk#
+si-outside#si-outside.wlk#
 skull-cave#skull-cave.wlk#
 somber-cave#somber-cave.wlk#
