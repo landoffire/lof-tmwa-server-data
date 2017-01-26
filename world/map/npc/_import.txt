@@ -124,5 +124,6 @@ import: npc/hh-maincave/_import.txt
 import: npc/hh-outside/_import.txt
 import: npc/jacks-basement/_import.txt
 import: npc/jacks-indoor/_import.txt
+import: npc/secret-island/_import.txt
 import: npc/skull-cave/_import.txt
 import: npc/somber-cave/_import.txt

@@ -1,0 +1,5 @@
+// Map secret-island: Secret Island
+// This file is generated automatically. All manually added changes will be removed when running the Converter.
+map: secret-island
+npc: npc/secret-island/_mobs.txt
+npc: npc/secret-island/_warps.txt
