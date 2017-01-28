@@ -4,13 +4,13 @@
 
 018-3,60,21,0|script|Susanne|114
 {
-  
-  if(BaseLevel <= 49) goto L_noob;
+
+  if(BaseLevel < 50) goto L_noob;
   if(@FafiFight == 1) goto L_coward;
   if(FAIRY_Quest == 1) goto L_tellagain;
-  if(FAIRY_Quest == 2) goto L_thanks; 
+  if(FAIRY_Quest == 2) goto L_thanks;
   if(FAIRY_Quest >= 3) goto L_thanks_again;
-    
+
 
     mes "[Susanne]";
     mes "\"Do you like fairies? I love them! I play with them all the time, they are so nice to me...\"";
@@ -30,7 +30,7 @@ L_firstmenu:
         "Nah, I've got more serious matters to attend to...", L_no;
 
 L_yes1:
-    
+
     mes "[Susanne]";
     mes "\"Thank you so much! I can't wait to see my friends again!\"";
     next;
@@ -43,7 +43,7 @@ L_yes1:
     next;
     mes "\"Thank You....\"";
     next;
-    mes "\"(Susanne Screams) WATCH OUT!!! I think I hear him in this very cave!!!\"";
+    mes "(Susanne Screams) \"WATCH OUT!!! I think I hear him in this very cave!!!\"";
     set FAIRY_Quest, 1;
     set @FafiFight, 1;
     monster "018-3",28,25,"FafiDragon",1120,1, "Susanne::OnFafiDragonDead";
@@ -75,11 +75,11 @@ L_tellagain:
 
 L_thanks:
     mes "[Susanne]";
-    
+
     getinventorylist;
     if (@inventorylist_count == 100) goto L_full_inv;
     set @inventorylist_count, 0;
-    
+
     mes "\"I'm so glad I get to see my friends again, thank you so much for saving them! You are so big and strong... You should talk to the Fairy Princess on the second floor of the Hurnscald Inn.\"";
     mes "\"By the way, I found this Helmet after you killed the Fafi Dragon, Maybe you can use it some day.\"";
     if (FAIRY_Quest==2)    set FAIRY_Quest, 3;
@@ -95,12 +95,12 @@ L_thanks_again:
     mes "[Susanne]";
     mes "\"I'm so glad I get to see my friends again, thank you so much for saving them!\"";
     close;
-    
+
 L_no:
     mes "[Susanne]";
     mes "\"Ok...please come back when you aren't busy...\"";
     next;
-    mes "\"(The girls turns around and you hear her sniffing, she is probably crying...\"";
+    mes "\"(The girl turns around and you hear her sniffing, she is probably crying...\"";
     close;
 
 L_noob:
