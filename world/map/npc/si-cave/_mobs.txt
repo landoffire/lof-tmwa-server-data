@@ -1,0 +1,27 @@
+// This file is generated automatically. All manually added changes will be removed when running the Converter.
+// Secret Island Cave mobs
+
+si-cave,95,66,133,71|monster|CaveSnake|1021,15,9000ms,3000ms,Mobsi-cave::On1021
+si-cave,95,84,133,36|monster|GoldenScorpion|1124,7,10000ms,5000ms,Mobsi-cave::On1124
+si-cave,102,48,81,34|monster|SmokeDragon|1123,2,100000ms,50000ms,Mobsi-cave::On1123
+
+
+si-cave,0,0,0|script|Mobsi-cave|32767
+{
+    end;
+
+On1021:
+    set @mobID, 1021;
+    callfunc "MobPoints";
+    end;
+
+On1123:
+    set @mobID, 1123;
+    callfunc "MobPoints";
+    end;
+
+On1124:
+    set @mobID, 1124;
+    callfunc "MobPoints";
+    end;
+}

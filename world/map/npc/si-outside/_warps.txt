@@ -1,5 +1,6 @@
 // This file is generated automatically. All manually added changes will be removed when running the Converter.
 // Secret Island warps
 
+si-outside,94,89|warp|-1,-1,si-cave,102,84
 si-outside,164,105|warp|-1,-1,018-1,166,49
 si-outside,73,24|warp|-1,-1,si-house,33,34
