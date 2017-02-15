@@ -1,0 +1,29 @@
+009-1,1,1,0|script|#ValentinesSpawner|127
+{
+end;
+
+OnInit:
+    if (debug >= 2) end;
+
+    setnpctimer 0;
+    initnpctimer;
+
+    goto L_SpawnCheck;
+
+OnTimer20000:
+    setnpctimer 0;
+    goto L_SpawnCheck;
+
+OnMobDeath:
+    set $@spawn_count, $@spawn_count - 1;
+    goto L_SpawnCheck;
+
+L_SpawnCheck:
+    // Still spawns alive?
+    if ($@spawn_count > 0) end;
+    // Make sure it's around Valentine's Day
+    if (gettime(6) != 2 || gettime(5) < 14 || gettime(5) > 21) end;
+
+    set $@spawn_count, 10;
+    areamonster "009-1", 20,20, 100,60, "", 1125, $@spawn_count, "#ValentinesSpawner::OnMobDeath";
+}
