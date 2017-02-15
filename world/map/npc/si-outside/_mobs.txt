@@ -7,6 +7,7 @@ si-outside,98,47,93,65|monster|BlackSlime|1119,10,15000ms,10000ms,Mobsi-outside:
 si-outside,91,60,153,95|monster|RedSlime|1008,12,12000ms,4000ms,Mobsi-outside::On1008
 si-outside,91,60,153,95|monster|YellowSlime|1007,15,12000ms,3000ms,Mobsi-outside::On1007
 si-outside,91,56,153,86|monster|CloverPatch|1037,2,25000ms,15000ms,Mobsi-outside::On1037
+si-outside,91,60,153,95|monster|Mouboo|1028,3,12000ms,4000ms,Mobsi-outside::On1028
 
 
 si-outside,0,0,0|script|Mobsi-outside|32767
@@ -20,6 +21,11 @@ On1007:
 
 On1008:
     set @mobID, 1008;
+    callfunc "MobPoints";
+    end;
+
+On1028:
+    set @mobID, 1028;
     callfunc "MobPoints";
     end;
 
